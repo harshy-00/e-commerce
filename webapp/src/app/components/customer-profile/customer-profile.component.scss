@@ -1,0 +1,117 @@
+// Color and Gradient Palette
+$primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+$secondary-gradient: linear-gradient(45deg, #ff6a00, #ee0979);
+$hover-gradient: linear-gradient(135deg, #ff758c, #ff7eb3);
+$black-gradient: linear-gradient(135deg, #000000 0%, #434343 100%);
+$text-shadow-light: 2px 2px 5px rgba(0, 0, 0, 0.1);
+$text-shadow-dark: 0px 4px 10px rgba(0, 0, 0, 0.3);
+
+// Body Styling
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
+
+// Profile Container Styling
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+
+  .profile-card {
+    background: $primary-gradient;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    width: 50%;
+    max-width: 500px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    position: relative;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      background: $hover-gradient;
+    }
+
+    // Header Styling
+    h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 1.5rem;
+      text-shadow: $text-shadow-light;
+      letter-spacing: 1px;
+
+      &:hover {
+        background: $black-gradient;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-shadow: none;
+        transition: background 0.3s ease-in-out;
+      }
+    }
+
+    // Info Sections
+    .profile-info {
+      margin-bottom: 1.5rem;
+      color: white;
+      font-size: 1.1rem;
+      text-align: left;
+      text-shadow: $text-shadow-dark;
+
+      span {
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      .info-detail {
+        color: #f0f0f0;
+        font-size: 1.1rem;
+      }
+    }
+
+    // Hover Effect for Each Info Section
+    .profile-info:hover {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+
+    // Animations for Profile Info Sections
+    .profile-info {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    // Responsive Design for Smaller Screens
+    @media (max-width: 768px) {
+      .profile-card {
+        width: 80%;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .profile-info {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Keyframes for Animations
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

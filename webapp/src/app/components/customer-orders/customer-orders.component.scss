@@ -1,0 +1,212 @@
+// Global Styles for smooth animations and text shadows
+$primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+$secondary-gradient: linear-gradient(45deg, #ff6a00, #ee0979);
+$hover-gradient: linear-gradient(135deg, #ff758c, #ff7eb3);
+$text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), 0 0 25px rgba(0, 0, 0, 0.2);
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f5f5f5;
+}
+
+// Container for the Orders section
+.py-10.px-20 {
+  padding: 2.5rem 5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// Heading Styles
+h3 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: $text-shadow;
+}
+
+// Order Item Styles
+.rounded-lg {
+  border-radius: 12px;
+  background: #fff;
+}
+
+.order-item {
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: $hover-gradient;
+  }
+}
+
+// Order ID and Date Styles
+h6 {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+span {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.order-status {
+  font-size: 1rem;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-block;
+
+  &.completed {
+    background: #28a745;
+  }
+
+  &.pending {
+    background: #ffc107;
+  }
+
+  &.cancelled {
+    background: #dc3545;
+  }
+}
+
+// Product Item Style
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+
+  img {
+    width: 80px;
+    height: 80px;
+    object-cover: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .product-info {
+    margin-left: 1rem;
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      text-shadow: $text-shadow;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $secondary-gradient;
+      }
+    }
+
+    .price-info {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+
+      s {
+        color: #888;
+        font-size: 0.9rem;
+      }
+
+      .discount {
+        color: #ff4500;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .final-price {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #28a745;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  .quantity {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+
+    .mr-4 {
+      margin-right: 0.5rem;
+    }
+
+    .quantity-value {
+      font-weight: 700;
+      color: #555;
+    }
+  }
+}
+
+// Total Price Styles
+.total-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-top: 1.5rem;
+  text-align: right;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+// Hover Effects and Transitions
+button,
+a {
+  background: $primary-gradient;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background: $hover-gradient;
+    transform: translateY(-4px);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+// Additional Responsive Styling for Smaller Screens
+@media screen and (max-width: 768px) {
+  .py-10.px-20 {
+    padding: 2rem 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .order-item {
+    padding: 1rem;
+  }
+
+  .product-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-info {
+    margin-left: 0;
+  }
+}
